@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+:root {
+  --primary: #086972;
+  --secondary: #87dfd6;
+  --light: #fbfd8a;
+  --turquoise: #01a9b4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--primary);
+  font-family: "Open Sans Condensed", sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Header */
+
+.header {
+  color: var(--primary);
+  background: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem;
+  border-bottom: 2px solid var(--light);
+}
+
+.header h1 {
+  font-size: 3rem;
+  letter-spacing: .2rem;
+}
+
+.header i {
+  margin-right: .8rem;
+
+}
+
+.header h3 {
+  font-size: 1.8rem;
+  letter-spacing: .2rem;
+}
+
+/* Skills Section */
+
+.skills {
+  padding: 2rem 1rem;
+}
+
+.skills p {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Skill Tree */
+
+.skills ul li {
+  position: relative;
+  margin: 0 auto;
+  width: 6px;
+  list-style: none;
+  background: var(--light);
+  padding: 20px 0;
+}
+
+.skills ul li:after {
+  position: absolute;
+  content: "";
+  background: var(--light);
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  top: calc(95px + 1rem + 28px);
+  left: calc(-1rem + 3px);
+}
+
+
+/* Skill Bubbles */
+
+.skills ul li div {
+  background: var(--secondary);
+  color: var(--primary);
+  position: relative;
+  top: 40px;
+  left: 40px;
+  width: 350px;
+  height: 190px;
+  padding: 1rem;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease;
+
+}
+
+.skills ul li:nth-child(even) div {
+  left: calc(-350px - 34px);
+  transform: translateX(-300px);
+}
+
+.skills ul li:nth-child(odd) div {
+  transform: translateX(300px);
+
+}
+
+.skills ul li.show div {
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
+
+}
+
+.skills ul li div:before {
+  position: absolute;
+  content: "";
+  border-style: solid;
+}
+
+.skills ul li:nth-child(odd) div:before {
+  top: 87px;
+  left: calc(-1rem - 4px);
+  border-color: transparent var(--light) transparent transparent;
+  border-width: 10px;
+}
+
+.skills ul li:nth-child(even) div:before {
+  top: 85px;
+  left: 350px;
+  border-color: transparent transparent transparent var(--light);
+  border-width: 10px;
+}
